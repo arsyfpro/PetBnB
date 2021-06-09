@@ -65,6 +65,7 @@ public class SignIn extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(995, 575));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 255));
@@ -73,11 +74,11 @@ public class SignIn extends javax.swing.JFrame {
 
         jLabel1.setText("Username");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 140, 71, 20);
+        jLabel1.setBounds(310, 210, 100, 14);
 
         jLabel2.setText("Password");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 200, 67, 20);
+        jLabel2.setBounds(310, 270, 120, 14);
 
         inputUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +86,7 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(inputUsername);
-        inputUsername.setBounds(190, 140, 139, 26);
+        inputUsername.setBounds(470, 200, 139, 30);
 
         inputPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +94,7 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(inputPass);
-        inputPass.setBounds(190, 200, 139, 26);
+        inputPass.setBounds(470, 260, 139, 30);
 
         btnSignIn.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSignIn.setText("Sign In");
@@ -104,11 +105,11 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(140, 310, 80, 31);
+        btnSignIn.setBounds(420, 370, 80, 31);
 
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(70, 370, 161, 20);
+        jLabel3.setBounds(350, 430, 150, 14);
 
         toSignUp.setForeground(new java.awt.Color(51, 51, 255));
         toSignUp.setText("Sign Up!");
@@ -118,21 +119,21 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(toSignUp);
-        toSignUp.setBounds(240, 370, 60, 20);
+        toSignUp.setBounds(520, 430, 100, 14);
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("WELCOME");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(80, 20, 190, 40);
+        jLabel4.setBounds(360, 80, 190, 40);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Please Insert your Username and Password");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(50, 70, 300, 17);
+        jLabel7.setBounds(330, 130, 300, 17);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 50, 360, 450);
+        jPanel1.setBounds(0, 50, 1000, 530);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(360, 40));
@@ -141,15 +142,15 @@ public class SignIn extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabel5.setText("X");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(330, 10, 51, 40);
+        jLabel5.setBounds(950, 10, 51, 40);
 
         jLabel6.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
         jLabel6.setText("-");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(300, 0, 30, 54);
+        jLabel6.setBounds(920, 10, 30, 54);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 0, 360, 50);
+        jPanel2.setBounds(0, 0, 1000, 50);
 
         pack();
         setLocationRelativeTo(null);
