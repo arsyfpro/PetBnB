@@ -41,6 +41,11 @@ public class SiSu extends javax.swing.JFrame {
         });
 
         btnHost.setText("HOST");
+        btnHost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHostActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,6 +78,13 @@ public class SiSu extends javax.swing.JFrame {
         su.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnUserActionPerformed
+
+    private void btnHostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHostActionPerformed
+        // TODO add your handling code here:
+        SignUpHost suh = new SignUpHost();
+        suh.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHostActionPerformed
 
     /**
      * @param args the command line arguments
