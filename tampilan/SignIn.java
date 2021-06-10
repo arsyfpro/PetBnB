@@ -76,20 +76,12 @@ public class SignIn extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel1.setText("Username");
         jPanel1.add(jLabel1);
-<<<<<<< HEAD
-        jLabel1.setBounds(310, 210, 100, 25);
-=======
         jLabel1.setBounds(210, 200, 130, 20);
->>>>>>> edfb8010085470d7eb3da829b233996d0680c1cf
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel2.setText("Password");
         jPanel1.add(jLabel2);
-<<<<<<< HEAD
-        jLabel2.setBounds(310, 270, 120, 25);
-=======
         jLabel2.setBounds(210, 260, 120, 32);
->>>>>>> edfb8010085470d7eb3da829b233996d0680c1cf
 
         inputUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,19 +109,11 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-<<<<<<< HEAD
-        btnSignIn.setBounds(420, 370, 80, 30);
+        btnSignIn.setBounds(450, 370, 130, 30);
 
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 430, 150, 25);
-=======
-        btnSignIn.setBounds(450, 370, 130, 31);
-
-        jLabel3.setText("hasn't had an account?");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(400, 420, 161, 30);
->>>>>>> edfb8010085470d7eb3da829b233996d0680c1cf
+        jLabel3.setBounds(400, 420, 181, 30);
 
         toSignUp.setForeground(new java.awt.Color(51, 51, 255));
         toSignUp.setText("Sign Up!");
@@ -139,11 +123,7 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(toSignUp);
-<<<<<<< HEAD
-        toSignUp.setBounds(520, 430, 100, 25);
-=======
         toSignUp.setBounds(570, 420, 60, 30);
->>>>>>> edfb8010085470d7eb3da829b233996d0680c1cf
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 60)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -199,6 +179,7 @@ public class SignIn extends javax.swing.JFrame {
 
             if (validasi(username, pass)){
                 int ulevel = rs.getInt("user_level");
+                int idusr = rs.getInt("id");
 
                 switch(ulevel){
                     case 1:
@@ -207,10 +188,21 @@ public class SignIn extends javax.swing.JFrame {
                     dispose();
                     break;
                     case 2:
-                    Host host = new Host();
-                    host.setVisible(true);
-                    dispose();
-                    break;
+                    String sql = "SELECT verified FROM host WHERE id_user=?";
+                    PreparedStatement pst = cn.prepareStatement(sql);
+                    pst.setInt(1, idusr);
+                    ResultSet rsht = pst.executeQuery();
+                    if (rsht.next()){
+                        if ("Y".equals(rsht.getString("verified"))){
+                            Host host = new Host();
+                            host.setVisible(true);
+                            dispose();
+                            break;
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Akun Anda belum terverifikasi");
+                            break;
+                        }
+                    }
                     case 3:
                     Admin admin = new Admin();
                     admin.setVisible(true);
