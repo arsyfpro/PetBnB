@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2021 at 01:38 PM
+-- Generation Time: Jun 10, 2021 at 06:19 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -42,8 +42,8 @@ INSERT INTO `host` (`id_host`, `id_user`, `alamat`, `verified`) VALUES
 (2, 3, 'Jl. Tenggara Medan Kota', 'Y'),
 (3, 6, 'Jalan Cinta Medan Baru', 'Y'),
 (6, 8, 'jauh banget deh', 'N'),
-(7, 9, 'Jauh banget jalan Conjuring', 'N'),
-(8, 10, 'Jl. Medan Sunggal', 'N');
+(7, 9, 'Jauh banget jalan Conjuring', 'Y'),
+(8, 10, 'Jl. Medan Sunggal', 'Y');
 
 -- --------------------------------------------------------
 
@@ -59,6 +59,62 @@ CREATE TABLE `host_house` (
   `foto` text NOT NULL,
   `terima_order` char(1) NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `host_house`
+--
+
+INSERT INTO `host_house` (`id_house`, `id_host`, `no_hp`, `email`, `foto`, `terima_order`) VALUES
+(1, 2, '081234567890', 'putripethouse@example.com', 'host1.jpg', 'Y'),
+(2, 3, '08080823456', 'email@email.com', 'host2.jpg', 'Y'),
+(3, 8, '0878896545', 'mhmd@email.com', 'host3.jpg', 'Y'),
+(4, 7, '12347859522', 'hosthewan@email.com', 'host4.jpg', 'N');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesanan`
+--
+
+CREATE TABLE `pesanan` (
+  `id_pesanan` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_host` int(11) NOT NULL,
+  `detail_pesanan` text NOT NULL DEFAULT 'Tes Pesanan'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesanan`
+--
+
+INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_host`, `detail_pesanan`) VALUES
+(1, 1, 2, 'Tes Pesanan'),
+(2, 4, 2, 'Tes Pesanan'),
+(3, 5, 2, 'Tes Pesanan'),
+(4, 1, 2, 'Tes Pesanan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review_rating_host`
+--
+
+CREATE TABLE `review_rating_host` (
+  `id_review_rating` int(11) NOT NULL,
+  `id_pesanan` int(11) NOT NULL,
+  `review` text NOT NULL,
+  `rating` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review_rating_host`
+--
+
+INSERT INTO `review_rating_host` (`id_review_rating`, `id_pesanan`, `review`, `rating`) VALUES
+(1, 1, 'BAGUS!!!', 5),
+(2, 2, 'HEHE SUKA BANGEETT', 4),
+(3, 3, 'YAA SO SO LAH!!', 3),
+(4, 4, 'MANTAPP BROSKIII', 5);
 
 -- --------------------------------------------------------
 
@@ -86,7 +142,6 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `user_level`) VALUES
 (5, 'ara', 'ara', 'ara', 1),
 (6, 'Haya Pet House', 'sity', 'sity', 2),
 (8, 'felis catus lovers', 'asdasd', '123', 2),
-(9, 'Mahmud Pet House', 'mhmd', '123', 2),
 (10, 'Mahmud Pet House', 'mhmd', '123', 2);
 
 --
@@ -98,6 +153,24 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `user_level`) VALUES
 --
 ALTER TABLE `host`
   ADD PRIMARY KEY (`id_host`);
+
+--
+-- Indexes for table `host_house`
+--
+ALTER TABLE `host_house`
+  ADD PRIMARY KEY (`id_house`);
+
+--
+-- Indexes for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD PRIMARY KEY (`id_pesanan`);
+
+--
+-- Indexes for table `review_rating_host`
+--
+ALTER TABLE `review_rating_host`
+  ADD PRIMARY KEY (`id_review_rating`);
 
 --
 -- Indexes for table `user`
@@ -114,6 +187,24 @@ ALTER TABLE `user`
 --
 ALTER TABLE `host`
   MODIFY `id_host` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `host_house`
+--
+ALTER TABLE `host_house`
+  MODIFY `id_house` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `review_rating_host`
+--
+ALTER TABLE `review_rating_host`
+  MODIFY `id_review_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`

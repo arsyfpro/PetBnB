@@ -194,7 +194,7 @@ public class SignIn extends javax.swing.JFrame {
                     ResultSet rsht = pst.executeQuery();
                     if (rsht.next()){
                         if ("Y".equals(rsht.getString("verified"))){
-                            Host host = new Host();
+                            HomeHost host = new HomeHost();
                             host.setVisible(true);
                             dispose();
                             break;

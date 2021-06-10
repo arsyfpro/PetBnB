@@ -23,6 +23,7 @@ public class ListHost extends javax.swing.JFrame {
     private ArrayList<Host> listHost = new ArrayList<>();
     private ListIterator<Host> listIterator;
     int size;
+    private String id_host = "";
     
     public ListHost() {
         initComponents();
@@ -33,9 +34,16 @@ public class ListHost extends javax.swing.JFrame {
         size = listHost.size();
         listIterator = listHost.listIterator();
         hst = listIterator.next();
+        id_host = hst.getId_host();
         NamaHost.setText(hst.getNama());
         AlamatHost.setText(hst.getAlamat());
-        GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getGambar())));
+        EmailHost.setText(hst.getEmail());
+        NoHost.setText(hst.getNo_hp());
+        GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getFoto())));
+        if (hst.getRating() == 0)
+            RatingHost.setText("-");
+        else
+            RatingHost.setText("" + hst.getRating());
     }
 
     /**
@@ -53,6 +61,15 @@ public class ListHost extends javax.swing.JFrame {
         LabelFrame = new javax.swing.JLabel();
         btnPrev = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
+        labelNo = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        EmailHost = new javax.swing.JLabel();
+        NoHost = new javax.swing.JLabel();
+        btnReservasi = new javax.swing.JButton();
+        labelRating = new javax.swing.JLabel();
+        RatingHost = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(995, 575));
@@ -62,9 +79,10 @@ public class ListHost extends javax.swing.JFrame {
 
         AlamatHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         AlamatHost.setText("Alamat");
+        AlamatHost.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         LabelFrame.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        LabelFrame.setText("List Host Penyedia Penginapan");
+        LabelFrame.setText("Host Penyedia Penginapan");
 
         btnPrev.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnPrev.setText("<");
@@ -84,45 +102,117 @@ public class ListHost extends javax.swing.JFrame {
             }
         });
 
+        labelNo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        labelNo.setText("Nomor HP");
+
+        labelEmail.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        labelEmail.setText("Email");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Alamat");
+
+        EmailHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        EmailHost.setText("Email Host");
+
+        NoHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        NoHost.setText("Nomor Host");
+
+        btnReservasi.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnReservasi.setText("Reservasi di sini");
+        btnReservasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservasiActionPerformed(evt);
+            }
+        });
+
+        labelRating.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        labelRating.setText("Rating");
+
+        RatingHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        RatingHost.setText("Nomor Host");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel2.setText("/ 5");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelFrame)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelFrame)
+                            .addComponent(GambarHost, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(GambarHost, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(84, 84, 84)
+                                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(AlamatHost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(NamaHost, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NamaHost, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(labelRating, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(labelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(labelNo, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(NoHost, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                                            .addComponent(EmailHost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(RatingHost)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel2))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(AlamatHost, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel1))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnReservasi)
+                                .addGap(106, 106, 106)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(LabelFrame)
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(NamaHost)
                         .addGap(18, 18, 18)
-                        .addComponent(AlamatHost, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(GambarHost, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelEmail)
+                            .addComponent(EmailHost))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelNo)
+                            .addComponent(NoHost))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelRating)
+                            .addComponent(RatingHost)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AlamatHost, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnReservasi, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(GambarHost, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -131,6 +221,22 @@ public class ListHost extends javax.swing.JFrame {
 
     private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevActionPerformed
         // TODO add your handling code here:
+        if(listIterator.hasPrevious()) {
+            Host hst;
+            hst = listIterator.previous();
+            id_host = hst.getId_host();
+            NamaHost.setText(hst.getNama());
+            AlamatHost.setText(hst.getAlamat());
+            EmailHost.setText(hst.getEmail());
+            NoHost.setText(hst.getNo_hp());
+            GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getFoto())));
+            if (hst.getRating() == 0)
+                RatingHost.setText("-");
+            else
+                RatingHost.setText("" + hst.getRating());
+        } else {
+            JOptionPane.showMessageDialog(null, "Kamu sudah sampai di halaman awal...");
+        }
     }//GEN-LAST:event_btnPrevActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
@@ -138,13 +244,28 @@ public class ListHost extends javax.swing.JFrame {
         if(listIterator.hasNext()) {
             Host hst;
             hst = listIterator.next();
+            id_host = hst.getId_host();
             NamaHost.setText(hst.getNama());
             AlamatHost.setText(hst.getAlamat());
-            GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getGambar())));
+            EmailHost.setText(hst.getEmail());
+            NoHost.setText(hst.getNo_hp());
+            GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getFoto())));
+            if (hst.getRating() == 0)
+                RatingHost.setText("-");
+            else
+                RatingHost.setText("" + hst.getRating());
         } else {
             JOptionPane.showMessageDialog(null, "Kamu sudah sampai di halaman terakhir...");
         }
     }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnReservasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservasiActionPerformed
+        // TODO add your handling code here:
+        
+        ReservasiPenginapan rp = new ReservasiPenginapan(id_host);
+        rp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnReservasiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,10 +304,19 @@ public class ListHost extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AlamatHost;
+    private javax.swing.JLabel EmailHost;
     private javax.swing.JLabel GambarHost;
     private javax.swing.JLabel LabelFrame;
     private javax.swing.JLabel NamaHost;
+    private javax.swing.JLabel NoHost;
+    private javax.swing.JLabel RatingHost;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrev;
+    private javax.swing.JButton btnReservasi;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelNo;
+    private javax.swing.JLabel labelRating;
     // End of variables declaration//GEN-END:variables
 }
