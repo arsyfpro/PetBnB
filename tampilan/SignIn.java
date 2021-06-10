@@ -69,16 +69,19 @@ public class SignIn extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(360, 446));
+        jPanel1.setMinimumSize(new java.awt.Dimension(995, 575));
+        jPanel1.setPreferredSize(new java.awt.Dimension(995, 575));
         jPanel1.setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel1.setText("Username");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(310, 210, 100, 14);
+        jLabel1.setBounds(210, 200, 130, 20);
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel2.setText("Password");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(310, 270, 120, 14);
+        jLabel2.setBounds(210, 260, 120, 32);
 
         inputUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +89,7 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(inputUsername);
-        inputUsername.setBounds(470, 200, 139, 30);
+        inputUsername.setBounds(520, 200, 240, 35);
 
         inputPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,22 +97,23 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(inputPass);
-        inputPass.setBounds(470, 260, 139, 30);
+        inputPass.setBounds(520, 260, 240, 35);
 
         btnSignIn.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSignIn.setText("Sign In");
         btnSignIn.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createEtchedBorder()));
+        btnSignIn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignInActionPerformed(evt);
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(420, 370, 80, 31);
+        btnSignIn.setBounds(450, 370, 130, 31);
 
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 430, 150, 14);
+        jLabel3.setBounds(400, 420, 161, 30);
 
         toSignUp.setForeground(new java.awt.Color(51, 51, 255));
         toSignUp.setText("Sign Up!");
@@ -119,21 +123,22 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(toSignUp);
-        toSignUp.setBounds(520, 430, 100, 14);
+        toSignUp.setBounds(570, 420, 60, 30);
 
-        jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 60)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("WELCOME");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(360, 80, 190, 40);
+        jLabel4.setBounds(370, 30, 280, 66);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Please Insert your Username and Password");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(330, 130, 300, 17);
+        jLabel7.setBounds(270, 100, 460, 25);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 50, 1000, 530);
+        jPanel1.setBounds(0, 50, 995, 575);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(360, 40));
@@ -146,8 +151,9 @@ public class SignIn extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
         jLabel6.setText("-");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(920, 10, 30, 54);
+        jLabel6.setBounds(920, 0, 30, 40);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 1000, 50);
