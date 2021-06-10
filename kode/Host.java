@@ -9,13 +9,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import tampilan.SignIn;
+//import tampilan.SignIn;
 
 /**
  *
  * @author USER
  */
-public class Host {
+public class Host implements InterfaceAmbilData {
     public PreparedStatement pstmt = null;
     public ResultSet rs;
     Connection cn = koneksi.Koneksi.Koneksi();
@@ -63,6 +63,7 @@ public class Host {
         return rating;
     }
     
+    @Override
     public void ambilData(ArrayList<Host> dtlHst) {
         try {
             String sql = "SELECT h.id_host, u.nama, h.alamat, hh.no_hp, hh.email, hh.foto, sum(rr.rating)/count(rr.id_review_rating) AS rating FROM host h JOIN host_house hh ON h.id_host = hh.id_host JOIN user u ON h.id_user = u.id LEFT JOIN pesanan p ON p.id_host = h.id_host LEFT JOIN review_rating_host rr ON rr.id_pesanan = p.id_pesanan WHERE hh.terima_order = 'Y' GROUP BY h.id_host";
