@@ -22,8 +22,9 @@ public class ListHost extends javax.swing.JFrame {
      */
     private ArrayList<Host> listHost = new ArrayList<>();
     private ListIterator<Host> listIterator;
-    int size;
-    private String id_host = "";
+    private int size;
+    private String id_host, namaHst;
+    private double harga;
     
     public ListHost() {
         initComponents();
@@ -35,11 +36,15 @@ public class ListHost extends javax.swing.JFrame {
         listIterator = listHost.listIterator();
         hst = listIterator.next();
         id_host = hst.getId_host();
+        namaHst = hst.getNama();
+        harga = hst.getHarga();
+        
         NamaHost.setText(hst.getNama());
         AlamatHost.setText(hst.getAlamat());
         EmailHost.setText(hst.getEmail());
         NoHost.setText(hst.getNo_hp());
         GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getFoto())));
+        HargaHost.setText(String.format("%,.2f", hst.getHarga()));
         if (hst.getRating() == 0)
             RatingHost.setText("-");
         else
@@ -70,9 +75,12 @@ public class ListHost extends javax.swing.JFrame {
         labelRating = new javax.swing.JLabel();
         RatingHost = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        labelRating1 = new javax.swing.JLabel();
+        HargaHost = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(995, 575));
 
         NamaHost.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         NamaHost.setText("Nama Host");
@@ -129,10 +137,22 @@ public class ListHost extends javax.swing.JFrame {
         labelRating.setText("Rating");
 
         RatingHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        RatingHost.setText("Nomor Host");
+        RatingHost.setText("Rating Host");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel2.setText("/ 5");
+
+        labelRating1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        labelRating1.setText("Harga");
+
+        HargaHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        HargaHost.setText("Harga");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel3.setText("/ malam");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel4.setText("Rp");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,31 +170,38 @@ public class ListHost extends javax.swing.JFrame {
                                 .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 220, Short.MAX_VALUE)
+                                .addComponent(btnReservasi)
+                                .addGap(106, 106, 106))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(AlamatHost, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1))
+                            .addComponent(NamaHost, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(labelRating, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelNo, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelRating1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NamaHost, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(NoHost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(EmailHost, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(labelRating, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(labelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(labelNo, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(NoHost, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                                            .addComponent(EmailHost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(HargaHost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                 .addComponent(RatingHost)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel2))))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(AlamatHost, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnReservasi)
-                                .addGap(106, 106, 106)))))
+                                                .addComponent(jLabel2)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel3)))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -182,9 +209,9 @@ public class ListHost extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(LabelFrame)
-                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
                         .addComponent(NamaHost)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -199,7 +226,13 @@ public class ListHost extends javax.swing.JFrame {
                             .addComponent(labelRating)
                             .addComponent(RatingHost)
                             .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelRating1)
+                            .addComponent(HargaHost)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AlamatHost, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,12 +240,13 @@ public class ListHost extends javax.swing.JFrame {
                         .addComponent(btnReservasi, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(GambarHost, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(GambarHost, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(42, Short.MAX_VALUE))))
         );
 
         pack();
@@ -225,11 +259,15 @@ public class ListHost extends javax.swing.JFrame {
             Host hst;
             hst = listIterator.previous();
             id_host = hst.getId_host();
+            namaHst = hst.getNama();
+            harga = hst.getHarga();
+            
             NamaHost.setText(hst.getNama());
             AlamatHost.setText(hst.getAlamat());
             EmailHost.setText(hst.getEmail());
             NoHost.setText(hst.getNo_hp());
             GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getFoto())));
+            HargaHost.setText(String.format("%,.2f", hst.getHarga()));
             if (hst.getRating() == 0)
                 RatingHost.setText("-");
             else
@@ -245,11 +283,15 @@ public class ListHost extends javax.swing.JFrame {
             Host hst;
             hst = listIterator.next();
             id_host = hst.getId_host();
+            namaHst = hst.getNama();
+            harga = hst.getHarga();
+            
             NamaHost.setText(hst.getNama());
             AlamatHost.setText(hst.getAlamat());
             EmailHost.setText(hst.getEmail());
             NoHost.setText(hst.getNo_hp());
             GambarHost.setIcon(new ImageIcon(getClass().getResource("/resource_image/"+hst.getFoto())));
+            HargaHost.setText(String.format("%,.2f", hst.getHarga()));
             if (hst.getRating() == 0)
                 RatingHost.setText("-");
             else
@@ -262,7 +304,7 @@ public class ListHost extends javax.swing.JFrame {
     private void btnReservasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservasiActionPerformed
         // TODO add your handling code here:
         
-        ReservasiPenginapan rp = new ReservasiPenginapan(id_host);
+        ReservasiPenginapan rp = new ReservasiPenginapan(id_host, namaHst, harga);
         rp.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnReservasiActionPerformed
@@ -306,6 +348,7 @@ public class ListHost extends javax.swing.JFrame {
     private javax.swing.JLabel AlamatHost;
     private javax.swing.JLabel EmailHost;
     private javax.swing.JLabel GambarHost;
+    private javax.swing.JLabel HargaHost;
     private javax.swing.JLabel LabelFrame;
     private javax.swing.JLabel NamaHost;
     private javax.swing.JLabel NoHost;
@@ -315,8 +358,11 @@ public class ListHost extends javax.swing.JFrame {
     private javax.swing.JButton btnReservasi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelNo;
     private javax.swing.JLabel labelRating;
+    private javax.swing.JLabel labelRating1;
     // End of variables declaration//GEN-END:variables
 }

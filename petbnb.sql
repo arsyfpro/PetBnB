@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2021 at 06:19 PM
+-- Generation Time: Jun 10, 2021 at 11:08 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -57,6 +57,7 @@ CREATE TABLE `host_house` (
   `no_hp` varchar(20) NOT NULL,
   `email` varchar(320) NOT NULL,
   `foto` text NOT NULL,
+  `harga` int(11) NOT NULL,
   `terima_order` char(1) NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -64,11 +65,11 @@ CREATE TABLE `host_house` (
 -- Dumping data for table `host_house`
 --
 
-INSERT INTO `host_house` (`id_house`, `id_host`, `no_hp`, `email`, `foto`, `terima_order`) VALUES
-(1, 2, '081234567890', 'putripethouse@example.com', 'host1.jpg', 'Y'),
-(2, 3, '08080823456', 'email@email.com', 'host2.jpg', 'Y'),
-(3, 8, '0878896545', 'mhmd@email.com', 'host3.jpg', 'Y'),
-(4, 7, '12347859522', 'hosthewan@email.com', 'host4.jpg', 'N');
+INSERT INTO `host_house` (`id_house`, `id_host`, `no_hp`, `email`, `foto`, `harga`, `terima_order`) VALUES
+(1, 2, '081234567890', 'putripethouse@example.com', 'host1.jpg', 100000, 'Y'),
+(2, 3, '08080823456', 'email@email.com', 'host2.jpg', 120000, 'Y'),
+(3, 8, '0878896545', 'mhmd@email.com', 'host3.jpg', 95000, 'Y'),
+(4, 7, '12347859522', 'hosthewan@email.com', 'host4.jpg', 80000, 'N');
 
 -- --------------------------------------------------------
 
