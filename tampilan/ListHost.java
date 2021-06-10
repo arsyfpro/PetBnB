@@ -55,6 +55,7 @@ public class ListHost extends javax.swing.JFrame {
         btnNext = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(995, 575));
 
         NamaHost.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         NamaHost.setText("Nama Host");

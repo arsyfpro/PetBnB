@@ -74,11 +74,11 @@ public class SignIn extends javax.swing.JFrame {
 
         jLabel1.setText("Username");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(310, 210, 100, 14);
+        jLabel1.setBounds(310, 210, 100, 25);
 
         jLabel2.setText("Password");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(310, 270, 120, 14);
+        jLabel2.setBounds(310, 270, 120, 25);
 
         inputUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,11 +105,11 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(420, 370, 80, 31);
+        btnSignIn.setBounds(420, 370, 80, 30);
 
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 430, 150, 14);
+        jLabel3.setBounds(350, 430, 150, 25);
 
         toSignUp.setForeground(new java.awt.Color(51, 51, 255));
         toSignUp.setText("Sign Up!");
@@ -119,7 +119,7 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(toSignUp);
-        toSignUp.setBounds(520, 430, 100, 14);
+        toSignUp.setBounds(520, 430, 100, 25);
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

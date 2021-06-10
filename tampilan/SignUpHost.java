@@ -141,15 +141,27 @@ public class SignUpHost extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Data tidak boleh kosong!");
         } else {
             try {
+                int lastID = 0;
+                
                 String sql1= "INSERT INTO user (nama, username, password, user_level)"
                         + "VALUES('"+nama+"','"+username+"','"+pass+"',2)";
-                String sql2 = "INSERT INTO host (id_host, nama_host, gambar, alamat)"
-                        + "VALUES(null,'"+nama+"',null,'"+alamat+"')";
                 
                 st = cn.createStatement();
-                st.addBatch(sql1);
-                st.addBatch(sql2);
-                st.executeBatch();
+                st.executeUpdate(sql1, Statement.RETURN_GENERATED_KEYS);
+                ResultSet rs = st.getGeneratedKeys();
+                
+                if (rs.next())
+                    lastID = rs.getInt(1);
+                
+                String sql2 = "INSERT INTO host (id_host, id_user, alamat)"
+                        + "VALUES(null,'"+lastID+"','"+alamat+"')";
+                
+                st.executeUpdate(sql2);
+//                st.addBatch(sql1);
+//                st.addBatch(sql2);
+//                st.executeBatch();
+                
+                JOptionPane.showMessageDialog(null, "Pendaftaran berhasil. Silakan tunggu sampai admin mem-verifikasi!");
                 
                 SignIn si = new SignIn();
                 si.setVisible(true);
