@@ -61,8 +61,8 @@ public class SignIn extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel_Close = new javax.swing.JLabel();
+        jLabel_Minimize = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(995, 575));
@@ -109,11 +109,11 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(450, 370, 130, 31);
+        btnSignIn.setBounds(450, 370, 130, 30);
 
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(400, 420, 111, 30);
+        jLabel3.setBounds(400, 420, 181, 30);
 
         toSignUp.setForeground(new java.awt.Color(51, 51, 255));
         toSignUp.setText("Sign Up!");
@@ -144,16 +144,26 @@ public class SignIn extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(360, 40));
         jPanel2.setLayout(null);
 
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jLabel5.setText("X");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(950, 10, 51, 40);
+        jLabel_Close.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel_Close.setText("X");
+        jLabel_Close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_CloseMouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel_Close);
+        jLabel_Close.setBounds(950, 10, 51, 40);
 
-        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
-        jLabel6.setText("-");
-        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(920, 0, 30, 40);
+        jLabel_Minimize.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
+        jLabel_Minimize.setText("-");
+        jLabel_Minimize.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel_Minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_MinimizeMouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel_Minimize);
+        jLabel_Minimize.setBounds(920, 0, 30, 40);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 1000, 50);
@@ -178,12 +188,13 @@ public class SignIn extends javax.swing.JFrame {
             String pass = new String (inputPass.getPassword());
 
             if (validasi(username, pass)){
-                int ulevel = rs.getInt("user_level");
                 int idusr = rs.getInt("id");
-
+                int ulevel = rs.getInt("user_level");
+                String nama = rs.getString("nama");
+                
                 switch(ulevel){
                     case 1:
-                    User user = new User();
+                    HomeUser user = new HomeUser(idusr, nama);
                     user.setVisible(true);
                     dispose();
                     break;
@@ -221,6 +232,14 @@ public class SignIn extends javax.swing.JFrame {
     private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputUsernameActionPerformed
+
+    private void jLabel_CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_CloseMouseClicked
+    System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel_CloseMouseClicked
+
+    private void jLabel_MinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_MinimizeMouseClicked
+    this.setState(1);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel_MinimizeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -265,9 +284,9 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel_Close;
+    private javax.swing.JLabel jLabel_Minimize;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel toSignUp;

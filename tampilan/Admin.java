@@ -27,153 +27,31 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        KelolaHost = new javax.swing.JLabel();
-        KelolaPromo = new javax.swing.JLabel();
-        KelolaUser = new javax.swing.JLabel();
-        Transaksi = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        VerifHost = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(995, 575));
-        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setText("Admin");
 
-        KelolaHost.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        KelolaHost.setText("HOST");
-        KelolaHost.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                KelolaHostMouseClicked(evt);
-            }
-        });
-        jPanel1.add(KelolaHost, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
-
-        KelolaPromo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        KelolaPromo.setText("KELOLA PROMO");
-        KelolaPromo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                KelolaPromoMouseClicked(evt);
-            }
-        });
-        jPanel1.add(KelolaPromo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
-
-        KelolaUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        KelolaUser.setText("USER");
-        KelolaUser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                KelolaUserMouseClicked(evt);
-            }
-        });
-        jPanel1.add(KelolaUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
-
-        Transaksi.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Transaksi.setText("TRANSAKSI");
-        Transaksi.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TransaksiMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel6.setText("KELOLA AKUN");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
-
-        VerifHost.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        VerifHost.setText("VERIFIKASI HOST");
-        VerifHost.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                VerifHostMouseClicked(evt);
-            }
-        });
-        jPanel1.add(VerifHost, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 220, 575);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setText("ADMIN");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(326, 326, 326)
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(176, 176, 176)
                 .addComponent(jLabel1)
-                .addGap(0, 421, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(253, 253, 253)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(128, 128, 128)
                 .addComponent(jLabel1)
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(215, 55, 780, 520);
-
-        jPanel4.setBackground(new java.awt.Color(102, 102, 255));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(220, 0, 780, 58);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void KelolaUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KelolaUserMouseClicked
-        // TODO add your handling code here:
-        KelolaUser ku = new KelolaUser();
-        ku.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_KelolaUserMouseClicked
-
-    private void KelolaHostMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KelolaHostMouseClicked
-        // TODO add your handling code here:
-        KelolaUser kh = new KelolaUser();
-        kh.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_KelolaHostMouseClicked
-
-    private void KelolaPromoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KelolaPromoMouseClicked
-        // TODO add your handling code here:
-        Promo prm = new Promo();
-        prm.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_KelolaPromoMouseClicked
-
-    private void TransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransaksiMouseClicked
-        // TODO add your handling code here:
-        Transaksi trs = new Transaksi();
-        trs.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_TransaksiMouseClicked
-
-    private void VerifHostMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerifHostMouseClicked
-        // TODO add your handling code here:
-        Verif v = new Verif();
-        v.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_VerifHostMouseClicked
 
     /**
      * @param args the command line arguments
@@ -211,15 +89,6 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel KelolaHost;
-    private javax.swing.JLabel KelolaPromo;
-    private javax.swing.JLabel KelolaUser;
-    private javax.swing.JLabel Transaksi;
-    private javax.swing.JLabel VerifHost;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

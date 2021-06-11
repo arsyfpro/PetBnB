@@ -34,8 +34,8 @@ public class SignUpHost extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel_Close = new javax.swing.JLabel();
+        jLabel_Minimize = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -61,34 +61,44 @@ public class SignUpHost extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(360, 40));
         jPanel1.setLayout(null);
 
-        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jLabel6.setText("X");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(950, 10, 51, 40);
+        jLabel_Close.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel_Close.setText("X");
+        jLabel_Close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_CloseMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel_Close);
+        jLabel_Close.setBounds(950, 10, 51, 40);
 
-        jLabel7.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
-        jLabel7.setText("-");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(920, 10, 15, 30);
+        jLabel_Minimize.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
+        jLabel_Minimize.setText("-");
+        jLabel_Minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_MinimizeMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel_Minimize);
+        jLabel_Minimize.setBounds(920, 10, 15, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1000, 50);
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 255));
 
-        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
         jLabel4.setText("Alamat");
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
         jLabel1.setText("Nama Host");
 
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
         jLabel5.setText("Password (again)");
 
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
         jLabel3.setText("Password");
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
         jLabel2.setText("Username");
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -142,29 +152,27 @@ public class SignUpHost extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(144, 144, 144)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputPass2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(inputNamaHost)
                             .addComponent(jScrollPane2)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(289, 289, 289)
-                        .addComponent(inputPass2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(inputPass, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(344, 344, 344)
-                            .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(354, 354, 354)
+                        .addComponent(inputPass, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(180, 180, 180))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +220,7 @@ public class SignUpHost extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(btnSignUp)
                 .addGap(59, 59, 59))
         );
@@ -235,34 +243,35 @@ public class SignUpHost extends javax.swing.JFrame {
         if (nama.isEmpty() || username.isEmpty() || pass.isEmpty() || pass2.isEmpty() || alamat.isEmpty()){
             JOptionPane.showMessageDialog(null, "Data tidak boleh kosong!");
         } else {
-            try {
-                int lastID = 0;
-                
-                String sql1= "INSERT INTO user (nama, username, password, user_level)"
-                        + "VALUES('"+nama+"','"+username+"','"+pass+"',2)";
-                
-                st = cn.createStatement();
-                st.executeUpdate(sql1, Statement.RETURN_GENERATED_KEYS);
-                ResultSet rs = st.getGeneratedKeys();
-                
-                if (rs.next())
-                    lastID = rs.getInt(1);
-                
-                String sql2 = "INSERT INTO host (id_host, id_user, alamat)"
-                        + "VALUES(null,'"+lastID+"','"+alamat+"')";
-                
-                st.executeUpdate(sql2);
-//                st.addBatch(sql1);
-//                st.addBatch(sql2);
-//                st.executeBatch();
-                
-                JOptionPane.showMessageDialog(null, "Pendaftaran berhasil. Silakan tunggu sampai admin mem-verifikasi!");
-                
-                SignIn si = new SignIn();
-                si.setVisible(true);
-                dispose();
-            } catch (Exception e){
-                e.printStackTrace();
+            if (pass == pass2) {
+                try {
+                    int lastID = 0;
+
+                    String sql1= "INSERT INTO user (nama, username, password, user_level)"
+                            + "VALUES('"+nama+"','"+username+"','"+pass+"',2)";
+
+                    st = cn.createStatement();
+                    st.executeUpdate(sql1, Statement.RETURN_GENERATED_KEYS);
+                    ResultSet rs = st.getGeneratedKeys();
+
+                    if (rs.next())
+                        lastID = rs.getInt(1);
+
+                    String sql2 = "INSERT INTO host (id_host, id_user, alamat)"
+                            + "VALUES(null,'"+lastID+"','"+alamat+"')";
+
+                    st.executeUpdate(sql2);
+
+                    JOptionPane.showMessageDialog(null, "Pendaftaran berhasil. Silakan tunggu sampai admin mem-verifikasi!");
+
+                    SignIn si = new SignIn();
+                    si.setVisible(true);
+                    dispose();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Password tidak sama!");
             }
         }
     }//GEN-LAST:event_btnSignUpActionPerformed
@@ -282,6 +291,14 @@ public class SignUpHost extends javax.swing.JFrame {
     private void inputPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPassActionPerformed
+
+    private void jLabel_MinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_MinimizeMouseClicked
+        this.setState(1);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel_MinimizeMouseClicked
+
+    private void jLabel_CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_CloseMouseClicked
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel_CloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -330,10 +347,10 @@ public class SignUpHost extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel_Close;
+    private javax.swing.JLabel jLabel_Minimize;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
