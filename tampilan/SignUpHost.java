@@ -243,7 +243,7 @@ public class SignUpHost extends javax.swing.JFrame {
         if (nama.isEmpty() || username.isEmpty() || pass.isEmpty() || pass2.isEmpty() || alamat.isEmpty()){
             JOptionPane.showMessageDialog(null, "Data tidak boleh kosong!");
         } else {
-            if (pass == pass2) {
+            if (pass == null ? pass2 == null : pass.equals(pass2)) {
                 try {
                     int lastID = 0;
 
