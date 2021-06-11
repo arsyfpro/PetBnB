@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2021 at 09:28 PM
+-- Generation Time: Jun 11, 2021 at 10:30 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -85,7 +85,7 @@ CREATE TABLE `pesanan` (
   `jenis` varchar(100) NOT NULL,
   `umur` int(3) NOT NULL,
   `makanan_fav_hewan` varchar(100) NOT NULL,
-  `catatan` text NOT NULL DEFAULT '-',
+  `catatan` text NOT NULL,
   `layanan` varchar(15) NOT NULL,
   `check_in` varchar(10) NOT NULL,
   `check_out` varchar(10) NOT NULL,
