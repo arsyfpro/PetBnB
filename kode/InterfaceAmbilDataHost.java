@@ -5,12 +5,13 @@
  */
 package kode;
 
+//import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
  *
  * @author USER
  */
-public interface InterfaceAmbilData {
-    void ambilData(ArrayList<Host> dtlHst);
+public interface InterfaceAmbilDataHost {
+    public void ambilData(ArrayList<Host> dtlHst);
 }

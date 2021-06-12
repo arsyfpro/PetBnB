@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2021 at 10:30 PM
+-- Generation Time: Jun 12, 2021 at 03:12 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -92,24 +92,26 @@ CREATE TABLE `pesanan` (
   `voucher` varchar(100) NOT NULL DEFAULT 'N',
   `total` int(11) NOT NULL,
   `total_bayar` int(11) NOT NULL,
-  `status` varchar(15) NOT NULL DEFAULT 'Belum'
+  `status` varchar(15) NOT NULL DEFAULT 'Belum',
+  `waktu_pesan` varchar(19) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pesanan`
 --
 
-INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_host`, `nama_hewan`, `jenis`, `umur`, `makanan_fav_hewan`, `catatan`, `layanan`, `check_in`, `check_out`, `voucher`, `total`, `total_bayar`, `status`) VALUES
-(1, 1, 2, 'Coocoon', 'Kucing', 2, 'Ikan', '', 'Normal', '', '2021-06-05', 'YNTKTS', 1, 0, ''),
-(2, 4, 2, 'Bernard', 'Anjing', 2, 'Royal Canin', '', 'Premium', '', '', 'N', 0, 0, ''),
-(3, 5, 2, 'Abu', 'Kucing', 1, 'Whiskas Tuna', '', 'Premium', '', '', 'N', 0, 0, ''),
-(4, 1, 2, 'Eren Yeager', 'Anjing', 19, 'Ayam', '', 'Pertalite', '', '', 'YNTKTS', 0, 0, ''),
-(5, 1, 3, 'Melinda', 'Burung', 1, 'Kacang', '', 'Premium', '14-06-2021', '16-06-2021', 'N', 270000, 270000, 'Belum'),
-(6, 1, 2, 'Kola', 'Kucing', 2, 'Ikan', 'Tolong Kola selalu dimandikan dua kali ya', 'Deluxe', '16-06-2021', '18-06-2021', 'N', 260000, 260000, 'Belum'),
-(7, 4, 8, 'Mendo', 'Anjing', 3, 'Ayam Cincang', '', 'Pertalite', '13-06-2021', '14-06-2021', 'YNTKTS', 108000, 108000, 'Belum'),
-(8, 4, 8, 'Melinda', 'Kucing', 2, 'Kacang Merah', '-', 'Normal', '14-06-2021', '15-06-2021', 'N', 95000, 95000, 'Belum'),
-(9, 4, 8, 'Merinda', 'Hamster', 1, 'Kacang', 'hehe', 'Pertalite', '17-06-2021', '18-06-2021', 'YNTKTS', 135000, 108000, 'Belum'),
-(10, 4, 8, 'Felix', 'Kucing', 2, 'asd', 'asdas', 'Pertalite', '24-06-2021', '25-06-2021', 'N', 135000, 135000, 'Belum');
+INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_host`, `nama_hewan`, `jenis`, `umur`, `makanan_fav_hewan`, `catatan`, `layanan`, `check_in`, `check_out`, `voucher`, `total`, `total_bayar`, `status`, `waktu_pesan`) VALUES
+(1, 1, 2, 'Coocoon', 'Kucing', 2, 'Ikan', '', 'Normal', '', '2021-06-05', 'YNTKTS', 1, 0, '', ''),
+(2, 4, 2, 'Bernard', 'Anjing', 2, 'Royal Canin', '', 'Premium', '', '', 'N', 0, 0, '', ''),
+(3, 5, 2, 'Abu', 'Kucing', 1, 'Whiskas Tuna', '', 'Premium', '', '', 'N', 0, 0, '', ''),
+(4, 1, 2, 'Eren Yeager', 'Anjing', 19, 'Ayam', '', 'Pertalite', '', '', 'YNTKTS', 0, 0, '', ''),
+(5, 1, 3, 'Melinda', 'Burung', 1, 'Kacang', '', 'Premium', '14-06-2021', '16-06-2021', 'N', 270000, 270000, 'Belum', ''),
+(6, 1, 2, 'Kola', 'Kucing', 2, 'Ikan', 'Tolong Kola selalu dimandikan dua kali ya', 'Deluxe', '16-06-2021', '18-06-2021', 'N', 260000, 260000, 'Belum', ''),
+(7, 4, 8, 'Mendo', 'Anjing', 3, 'Ayam Cincang', '', 'Pertalite', '13-06-2021', '14-06-2021', 'YNTKTS', 108000, 108000, 'Belum', ''),
+(8, 4, 8, 'Melinda', 'Kucing', 2, 'Kacang Merah', '-', 'Normal', '14-06-2021', '15-06-2021', 'N', 95000, 95000, 'Belum', ''),
+(9, 4, 8, 'Merinda', 'Hamster', 1, 'Kacang', 'hehe', 'Pertalite', '17-06-2021', '18-06-2021', 'YNTKTS', 135000, 108000, 'Belum', ''),
+(10, 4, 8, 'Felix', 'Kucing', 2, 'asd', 'asdas', 'Pertalite', '24-06-2021', '25-06-2021', 'N', 135000, 135000, 'Belum', ''),
+(11, 1, 2, 'Mento', 'Kucing', 2, 'Ayam', '-', 'Premium', '17-06-2021', '18-06-2021', 'N', 115000, 115000, 'Selesai', '12-06-2021 14:44');
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,8 @@ INSERT INTO `review_rating_host` (`id_review_rating`, `id_pesanan`, `review`, `r
 (1, 1, 'BAGUS!!!', 5),
 (2, 2, 'HEHE SUKA BANGEETT', 4),
 (3, 3, 'YAA SO SO LAH!!', 3),
-(4, 4, 'MANTAPP BROSKIII', 5);
+(4, 4, 'MANTAPP BROSKIII', 5),
+(5, 11, 'Kerenn!!', 5);
 
 -- --------------------------------------------------------
 
@@ -247,13 +250,13 @@ ALTER TABLE `host_house`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `review_rating_host`
 --
 ALTER TABLE `review_rating_host`
-  MODIFY `id_review_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_review_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`

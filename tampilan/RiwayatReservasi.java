@@ -5,21 +5,84 @@
  */
 package tampilan;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import kode.Reservasi;
+
 /**
  *
  * @author USER
  */
 public class RiwayatReservasi extends javax.swing.JFrame {
-
+    public DefaultTableModel tabModel;
+    String id;
+    
     /**
      * Creates new form RiwayatReservasi
      * @param id_user
      */
     private int id_user;
     
+    private void headerTabel() {
+        Object[] header = {
+            "Kode", "Nama Hewan", "Layanan", "Check In", "Check Out", "Bayar (Rp)", "Waktu Pesan", "Status"
+        };
+        
+        tabModel = new DefaultTableModel(null, header);
+        tableData.setModel(tabModel);
+        lKode.setVisible(false);
+        lNama.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        lMakanan.setVisible(false);
+        lCatatan.setVisible(false);
+        lStatus.setVisible(false);
+        lReview.setVisible(false);
+        lRating.setVisible(false);
+        inputRating.setVisible(false);
+        inputReview.setVisible(false);
+        btnKirim.setVisible(false);
+    }
+    
+    private void tampilData() {
+        ResultSet rs;
+        
+        try {
+            kode.Reservasi r = new Reservasi();
+            rs = r.ambilData(id_user);
+            
+            while (rs.next()) {
+                Object[] data = {
+                    rs.getString("id_pesanan"),
+                    rs.getString("nama_hewan"),
+                    rs.getString("layanan"),
+                    rs.getString("check_in"),
+                    rs.getString("check_out"),
+                    rs.getInt("total_bayar"),
+                    rs.getString("waktu_pesan"),
+                    rs.getString("status")
+                };
+                
+                tabModel.addRow(data);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RiwayatReservasi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public RiwayatReservasi(int id_user) {
         initComponents();
         this.id_user = id_user;
+        headerTabel();
+        tampilData();
     }
     
     public RiwayatReservasi() {
@@ -35,21 +98,279 @@ public class RiwayatReservasi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableData = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        lKode = new javax.swing.JLabel();
+        lNama = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lMakanan = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lStatus = new javax.swing.JLabel();
+        lReview = new javax.swing.JLabel();
+        inputReview = new javax.swing.JTextField();
+        btnKirim = new javax.swing.JButton();
+        lRating = new javax.swing.JLabel();
+        inputRating = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lCatatan = new javax.swing.JTextArea();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(995, 575));
+        setMinimumSize(new java.awt.Dimension(995, 575));
+        setPreferredSize(new java.awt.Dimension(995, 575));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setText("Riwayat Reservasi Kamu");
+
+        jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane1MouseClicked(evt);
+            }
+        });
+
+        tableData.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        tableData.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
+            }
+        ));
+        tableData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDataMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableData);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel2.setText("Kode Pesanan: ");
+
+        lKode.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        lKode.setText("Kode");
+
+        lNama.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        lNama.setText("Hewan");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel3.setText("Makanan Favorit: ");
+
+        lMakanan.setFont(new java.awt.Font("Segoe UI", 0, 19)); // NOI18N
+        lMakanan.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel4.setText("Status Pesanan:");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel5.setText("Catatan:");
+
+        lStatus.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        lStatus.setText("Selesai");
+
+        lReview.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        lReview.setText("Review");
+
+        inputReview.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        inputReview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputReviewActionPerformed(evt);
+            }
+        });
+
+        btnKirim.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnKirim.setText("Kirim");
+        btnKirim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKirimActionPerformed(evt);
+            }
+        });
+
+        lRating.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        lRating.setText("Rating");
+
+        inputRating.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        inputRating.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5", "4", "3", "2", "1" }));
+
+        lCatatan.setColumns(20);
+        lCatatan.setRows(5);
+        jScrollPane2.setViewportView(lCatatan);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lKode, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lMakanan, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(lNama, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(lStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputReview, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lRating)
+                                            .addComponent(inputRating, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(lReview)
+                                    .addComponent(btnKirim)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(lKode))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lNama)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lMakanan, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(lStatus))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lReview)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(inputReview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(inputRating, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lRating)
+                                        .addGap(41, 41, 41))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)
+                        .addComponent(btnKirim)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane1MouseClicked
+
+    private void inputReviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputReviewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputReviewActionPerformed
+
+    private void btnKirimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKirimActionPerformed
+        try {
+            // TODO add your handling code here:
+            PreparedStatement pst = null;
+            ResultSet rs;
+            Connection cn = koneksi.Koneksi.Koneksi();
+            
+            String sql = "SELECT id_review_rating FROM review_rating_host WHERE id_pesanan='"+id+"'";
+            
+            pst = cn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            if (!rs.next()) {
+                String rvw = inputReview.getText();
+                String rtg = (String) inputRating.getSelectedItem();
+                
+                Statement st;
+//                Connection cn2 = koneksi.Koneksi.Koneksi();
+                String sql2 = "INSERT INTO review_rating_host (id_pesanan, review, rating)"
+                        + "VALUES('"+id+"', '"+rvw+"', '"+rtg+"')";
+                
+                st = cn.createStatement();
+                st.execute(sql2);
+                
+                JOptionPane.showMessageDialog(null, "Review dan rating kamu berhasil dikirim!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Kamu sudah pernah mengirim review pada pesanan ini!");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RiwayatReservasi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnKirimActionPerformed
+
+    private void tableDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataMouseClicked
+        try {
+            // TODO add your handling code here:
+            ResultSet rs;
+            id = tableData.getValueAt(tableData.getSelectedRow(), 0).toString();
+            kode.Reservasi r = new Reservasi();
+            rs = r.ambilData(id);
+            
+            if (rs.next()) {
+                lKode.setText(id);
+                lNama.setText(rs.getString("nama_hewan"));
+                lMakanan.setText(rs.getString("makanan_fav_hewan"));
+                lCatatan.setText(rs.getString("catatan"));
+                lStatus.setText(rs.getString("status"));
+                
+                lKode.setVisible(true);
+                lNama.setVisible(true);
+                jLabel3.setVisible(true);
+                jLabel4.setVisible(true);
+                jLabel5.setVisible(true);
+                lMakanan.setVisible(true);
+                lCatatan.setVisible(true);
+                lStatus.setVisible(true);
+                
+                if ("Selesai".equals(rs.getString("status"))) {
+                    lReview.setVisible(true);
+                    lRating.setVisible(true);
+                    inputRating.setVisible(true);
+                    inputReview.setVisible(true);
+                    btnKirim.setVisible(true);
+                }
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RiwayatReservasi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tableDataMouseClicked
 
     /**
      * @param args the command line arguments
@@ -87,5 +408,23 @@ public class RiwayatReservasi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKirim;
+    private javax.swing.JComboBox<String> inputRating;
+    private javax.swing.JTextField inputReview;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea lCatatan;
+    private javax.swing.JLabel lKode;
+    private javax.swing.JLabel lMakanan;
+    private javax.swing.JLabel lNama;
+    private javax.swing.JLabel lRating;
+    private javax.swing.JLabel lReview;
+    private javax.swing.JLabel lStatus;
+    private javax.swing.JTable tableData;
     // End of variables declaration//GEN-END:variables
 }

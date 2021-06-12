@@ -479,14 +479,21 @@ public class Reservasi extends javax.swing.JFrame {
             catatan = "-";
         
         SimpleDateFormat dtDB = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat jmDB = new SimpleDateFormat("HH:mm");
+        
+        String dtOr = dtDB.format(new Date());
+        String jmOr = jmDB.format(new Date());
+        
+        String waktu = dtOr + " " + jmOr;
+        
         String dtIn = dtDB.format(cekin);
         String dtOut = dtDB.format(cekout);
         
         try {
             Statement st;
             Connection cn = koneksi.Koneksi.Koneksi();
-            String sql = "INSERT INTO pesanan (id_user,id_host,nama_hewan,jenis,umur,makanan_fav_hewan,catatan,layanan,check_in,check_out,voucher,total,total_bayar)"
-                    + "VALUES('"+id_user+"','"+id_host+"','"+nama+"','"+jenis+"','"+umur+"','"+makanan+"','"+catatan+"','"+layanan+"','"+dtIn+"','"+dtOut+"','"+vchr+"','"+total+"','"+total_final+"')";
+            String sql = "INSERT INTO pesanan (id_user,id_host,nama_hewan,jenis,umur,makanan_fav_hewan,catatan,layanan,check_in,check_out,voucher,total,total_bayar,waktu_pesan)"
+                    + "VALUES('"+id_user+"','"+id_host+"','"+nama+"','"+jenis+"','"+umur+"','"+makanan+"','"+catatan+"','"+layanan+"','"+dtIn+"','"+dtOut+"','"+vchr+"','"+total+"','"+total_final+"','"+waktu+"')";
             
             st = cn.createStatement();
             st.execute(sql);

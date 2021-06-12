@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author USER
  */
-public class Host implements InterfaceAmbilData {
+public class Host implements InterfaceAmbilDataHost {
     public PreparedStatement pstmt = null;
     public ResultSet rs;
     Connection cn = koneksi.Koneksi.Koneksi();
