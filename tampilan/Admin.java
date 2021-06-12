@@ -40,12 +40,14 @@ public class Admin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(995, 575));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(164, 183, 135));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        KelolaHost.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        KelolaHost.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        KelolaHost.setForeground(new java.awt.Color(170, 58, 58));
         KelolaHost.setText("HOST");
         KelolaHost.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -54,7 +56,8 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel1.add(KelolaHost, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
-        KelolaPromo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        KelolaPromo.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        KelolaPromo.setForeground(new java.awt.Color(248, 228, 183));
         KelolaPromo.setText("KELOLA PROMO");
         KelolaPromo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -63,7 +66,8 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel1.add(KelolaPromo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
-        KelolaUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        KelolaUser.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        KelolaUser.setForeground(new java.awt.Color(170, 58, 58));
         KelolaUser.setText("USER");
         KelolaUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -72,7 +76,8 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel1.add(KelolaUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
-        Transaksi.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Transaksi.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        Transaksi.setForeground(new java.awt.Color(248, 228, 183));
         Transaksi.setText("TRANSAKSI");
         Transaksi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -81,11 +86,13 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel1.add(Transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(248, 228, 183));
         jLabel6.setText("KELOLA AKUN");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
-        VerifHost.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        VerifHost.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        VerifHost.setForeground(new java.awt.Color(248, 228, 183));
         VerifHost.setText("VERIFIKASI HOST");
         VerifHost.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -97,31 +104,33 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 220, 575);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(244, 244, 244));
 
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(170, 58, 58));
         jLabel1.setText("ADMIN");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(326, 326, 326)
-                .addComponent(jLabel1)
-                .addGap(0, 421, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(338, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(322, 322, 322))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(jLabel1)
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addGap(222, 222, 222)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(215, 55, 780, 520);
 
-        jPanel4.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel4.setBackground(new java.awt.Color(164, 183, 135));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
