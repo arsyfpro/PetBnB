@@ -53,10 +53,11 @@ public class SignUp extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(235, 168, 58));
         jPanel1.setPreferredSize(new java.awt.Dimension(360, 40));
 
         jLabel_Close.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel_Close.setForeground(new java.awt.Color(170, 58, 58));
         jLabel_Close.setText("X");
         jLabel_Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -65,6 +66,7 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         jLabel_Minimize.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
+        jLabel_Minimize.setForeground(new java.awt.Color(170, 58, 58));
         jLabel_Minimize.setText("-");
         jLabel_Minimize.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -95,18 +97,22 @@ public class SignUp extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1000, 50);
 
-        jPanel2.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(187, 55, 26));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 248, 217));
         jLabel1.setText("Name");
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 248, 217));
         jLabel2.setText("Username");
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 248, 217));
         jLabel3.setText("Password");
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 248, 217));
         jLabel4.setText("Password (again)");
 
         inputUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +122,7 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         btnSignUp.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnSignUp.setForeground(new java.awt.Color(225, 112, 26));
         btnSignUp.setText("Sign Up");
         btnSignUp.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createEtchedBorder()));
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -125,10 +132,12 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Tw Cen MT", 1, 60)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 248, 217));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("HELLO!");
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 248, 217));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Please input the data below!");
 

@@ -68,17 +68,19 @@ public class SignIn extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(995, 575));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(187, 55, 26));
         jPanel1.setMinimumSize(new java.awt.Dimension(995, 575));
         jPanel1.setPreferredSize(new java.awt.Dimension(995, 575));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 248, 217));
         jLabel1.setText("Username");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(210, 200, 130, 20);
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 248, 217));
         jLabel2.setText("Password");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(210, 260, 120, 32);
@@ -100,6 +102,7 @@ public class SignIn extends javax.swing.JFrame {
         inputPass.setBounds(520, 260, 240, 35);
 
         btnSignIn.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnSignIn.setForeground(new java.awt.Color(225, 112, 26));
         btnSignIn.setText("Sign In");
         btnSignIn.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createEtchedBorder()));
         btnSignIn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -111,11 +114,12 @@ public class SignIn extends javax.swing.JFrame {
         jPanel1.add(btnSignIn);
         btnSignIn.setBounds(450, 370, 130, 30);
 
+        jLabel3.setForeground(new java.awt.Color(255, 248, 217));
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(400, 420, 181, 30);
+        jLabel3.setBounds(400, 420, 161, 30);
 
-        toSignUp.setForeground(new java.awt.Color(51, 51, 255));
+        toSignUp.setForeground(new java.awt.Color(251, 147, 0));
         toSignUp.setText("Sign Up!");
         toSignUp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -126,12 +130,14 @@ public class SignIn extends javax.swing.JFrame {
         toSignUp.setBounds(570, 420, 60, 30);
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 60)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 248, 217));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("WELCOME");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(370, 30, 280, 66);
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 248, 217));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Please Insert your Username and Password");
         jPanel1.add(jLabel7);
@@ -140,11 +146,12 @@ public class SignIn extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 50, 995, 575);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(235, 168, 58));
         jPanel2.setPreferredSize(new java.awt.Dimension(360, 40));
         jPanel2.setLayout(null);
 
         jLabel_Close.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel_Close.setForeground(new java.awt.Color(170, 58, 58));
         jLabel_Close.setText("X");
         jLabel_Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -155,6 +162,7 @@ public class SignIn extends javax.swing.JFrame {
         jLabel_Close.setBounds(950, 10, 51, 40);
 
         jLabel_Minimize.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
+        jLabel_Minimize.setForeground(new java.awt.Color(170, 58, 58));
         jLabel_Minimize.setText("-");
         jLabel_Minimize.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel_Minimize.addMouseListener(new java.awt.event.MouseAdapter() {

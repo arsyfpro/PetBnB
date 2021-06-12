@@ -41,11 +41,11 @@ public class SiSu extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(995, 575));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(187, 55, 26));
 
-        btnUser.setBackground(new java.awt.Color(204, 204, 255));
+        btnUser.setBackground(new java.awt.Color(213, 219, 179));
         btnUser.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        btnUser.setForeground(new java.awt.Color(71, 89, 126));
+        btnUser.setForeground(new java.awt.Color(225, 112, 26));
         btnUser.setText("USER");
         btnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,9 +53,9 @@ public class SiSu extends javax.swing.JFrame {
             }
         });
 
-        btnHost.setBackground(new java.awt.Color(204, 204, 255));
+        btnHost.setBackground(new java.awt.Color(213, 219, 179));
         btnHost.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        btnHost.setForeground(new java.awt.Color(71, 89, 126));
+        btnHost.setForeground(new java.awt.Color(225, 112, 26));
         btnHost.setText("HOST");
         btnHost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,19 +63,23 @@ public class SiSu extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Consolas", 0, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 248, 217));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Masuk sebagai user untuk ");
 
-        jLabel3.setFont(new java.awt.Font("Consolas", 0, 20)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 248, 217));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("menitipkan peliharaanmu!   ");
 
-        jLabel4.setFont(new java.awt.Font("Consolas", 0, 20)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 248, 217));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Masuk sebagai host untuk ");
 
-        jLabel5.setFont(new java.awt.Font("Consolas", 0, 20)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 248, 217));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("mendaftarkan penitipanmu!");
 
@@ -89,24 +93,23 @@ public class SiSu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(87, 87, 87)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel3)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(143, 143, 143)
-                        .addComponent(btnUser, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                        .addComponent(btnUser, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnHost, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(130, 130, 130))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(89, 89, 89))
+                        .addGap(107, 107, 107))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addContainerGap())))
@@ -128,7 +131,7 @@ public class SiSu extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(48, 48, 48)
                 .addComponent(jLabel2)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
