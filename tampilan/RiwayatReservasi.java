@@ -32,7 +32,7 @@ public class RiwayatReservasi extends javax.swing.JFrame {
     
     private void headerTabel() {
         Object[] header = {
-            "Kode", "Nama Hewan", "Layanan", "Check In", "Check Out", "Bayar (Rp)", "Waktu Pesan", "Status"
+            "Kode", "Nama Host", "Nama Hewan", "Layanan", "Check In", "Check Out", "Bayar (Rp)", "Waktu Pesan", "Status"
         };
         
         tabModel = new DefaultTableModel(null, header);
@@ -54,14 +54,34 @@ public class RiwayatReservasi extends javax.swing.JFrame {
     
     private void tampilData() {
         ResultSet rs;
+        String namaHost = "";
         
         try {
             kode.Reservasi r = new Reservasi();
             rs = r.ambilData(id_user);
-            
             while (rs.next()) {
+                try {
+                    PreparedStatement pst = null;
+                    ResultSet rsHost;
+                    Connection cn = koneksi.Koneksi.Koneksi();
+
+                    String ckhost = rs.getString("id_host");
+
+                    String sql = "SELECT u.nama FROM user u JOIN host h ON u.id = h.id_user WHERE h.id_host="+ckhost;
+
+                    pst = cn.prepareStatement(sql);
+                    rsHost = pst.executeQuery();
+
+                    if (rsHost.next())
+                        namaHost = rsHost.getString("nama");
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(RiwayatReservasi.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
                 Object[] data = {
                     rs.getString("id_pesanan"),
+                    namaHost,
                     rs.getString("nama_hewan"),
                     rs.getString("layanan"),
                     rs.getString("check_in"),
@@ -120,7 +140,6 @@ public class RiwayatReservasi extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(995, 575));
         setMinimumSize(new java.awt.Dimension(995, 575));
-        setPreferredSize(new java.awt.Dimension(995, 575));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Riwayat Reservasi Kamu");
@@ -364,6 +383,12 @@ public class RiwayatReservasi extends javax.swing.JFrame {
                     inputRating.setVisible(true);
                     inputReview.setVisible(true);
                     btnKirim.setVisible(true);
+                } else {
+                    lReview.setVisible(false);
+                    lRating.setVisible(false);
+                    inputRating.setVisible(false);
+                    inputReview.setVisible(false);
+                    btnKirim.setVisible(false);
                 }
             }
             
