@@ -109,11 +109,11 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(450, 370, 130, 31);
+        btnSignIn.setBounds(450, 370, 130, 30);
 
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(400, 420, 111, 30);
+        jLabel3.setBounds(400, 420, 181, 30);
 
         toSignUp.setForeground(new java.awt.Color(51, 51, 255));
         toSignUp.setText("Sign Up!");
@@ -205,7 +205,7 @@ public class SignIn extends javax.swing.JFrame {
                     ResultSet rsht = pst.executeQuery();
                     if (rsht.next()){
                         if ("Y".equals(rsht.getString("verified"))){
-                            HomeHost host = new HomeHost();
+                            HomeHost host = new HomeHost(idusr);
                             host.setVisible(true);
                             dispose();
                             break;

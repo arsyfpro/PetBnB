@@ -4,18 +4,31 @@
  * and open the template in the editor.
  */
 package tampilan;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.*;
 
 /**
  *
  * @author ASUS
  */
 public class Promo extends javax.swing.JFrame {
+    public Statement st;
+    public PreparedStatement pstmt = null;
+    public ResultSet rs;
+    public DefaultTableModel tabModel;
+    Connection cn = koneksi.Koneksi.Koneksi();
 
     /**
      * Creates new form Promo
      */
     public Promo() {
         initComponents();
+        tabel();
+        ShowTable("");
+        
+        btnDel.setEnabled(false);
+        btnUpdate.setEnabled(false);
     }
 
     /**
@@ -27,26 +40,280 @@ public class Promo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelPromo = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        inputPot = new javax.swing.JTextField();
+        inputPem = new javax.swing.JTextField();
+        inputKode = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        inputAktif = new javax.swing.JComboBox<>();
+        btnUpdate = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        tabelPromo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Kode", "Potongan", "Aktif", "Pemakaian"
+            }
+        ));
+        tabelPromo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelPromoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabelPromo);
+
+        jLabel3.setText("Kode");
+
+        jLabel4.setText("Potongan");
+
+        jLabel5.setText("Pemakaian");
+
+        jLabel6.setText("Aktif ( Y / N )");
+
+        btnAdd.setText("TAMBAH");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+
+        inputAktif.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Y", "N" }));
+
+        btnUpdate.setText("UPDATE");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
+        btnDel.setText("HAPUS");
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelActionPerformed(evt);
+            }
+        });
+
+        btnReset.setText("RESET");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setText("Kelola Promosi");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(btnAdd))
+                        .addGap(45, 45, 45)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnUpdate))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                .addComponent(btnReset))
+                            .addComponent(inputPem, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                            .addComponent(inputPot, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                            .addComponent(inputKode, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                            .addComponent(inputAktif, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 575, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel1)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(inputKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(inputPot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(inputAktif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(inputPem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdd)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnReset))
+                .addGap(28, 28, 28)
+                .addComponent(btnDel)
+                .addGap(30, 30, 30))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        String kode = inputKode.getText();
+        String potongan = inputPot.getText();
+        String pemakaian = inputPem.getText();
+        
+        if (kode.isEmpty() || potongan.isEmpty() || pemakaian.isEmpty() ){
+            JOptionPane.showMessageDialog(null, "Data tidak boleh kosong!");
+        } else {
+                try {
+                    String sql = "INSERT INTO voucher (id_voucher, kode, potongan,aktif, pemakaian)"
+                            + "VALUES(null, '"+kode+"','"+potongan+"', '"+inputAktif.getSelectedItem()+"','"+pemakaian+"')";
+
+                    st = cn.createStatement();
+                    st.execute(sql);
+                    
+                    JOptionPane.showMessageDialog(null, "Voucher berhasil ditambahkan!");
+                    ShowTable("");
+                    reset();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void tabelPromoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelPromoMouseClicked
+        // TODO add your handling code here:
+        inputKode.setText(tabelPromo.getValueAt(tabelPromo.getSelectedRow(), 1).toString());
+        inputPot.setText(tabelPromo.getValueAt(tabelPromo.getSelectedRow(), 2).toString());
+        inputAktif.setSelectedItem(tabelPromo.getValueAt(tabelPromo.getSelectedRow(), 3).toString());
+        inputPem.setText(tabelPromo.getValueAt(tabelPromo.getSelectedRow(), 4).toString());
+        btnAdd.setEnabled(false);
+        btnUpdate.setEnabled(true);
+        btnDel.setEnabled(true);
+    }//GEN-LAST:event_tabelPromoMouseClicked
+
+    public void reset(){
+        inputKode.setText("");
+        inputPot.setText("");
+        inputAktif.setSelectedItem("");
+        inputPem.setText("");
+    }
+    
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        reset();
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        try {
+    st = cn.createStatement();
+    st.executeUpdate("UPDATE voucher set " 
+        + "kode='"      + inputKode.getText() + "', "
+        + "potongan='"   + inputPot.getText() + "', "
+        + "aktif='"        + inputAktif.getSelectedItem() + "', "
+        + "pemakaian='"    + inputPem.getText() + "' WHERE id_voucher= '"+tabModel.getValueAt(tabelPromo.getSelectedRow(), 0)+"' ");
+    ShowTable("");
+    JOptionPane.showMessageDialog(null, "Update Berhasil!");
+    reset();
+  } catch (Exception e) {
+    e.printStackTrace();
+  }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
+        // TODO add your handling code here:
+        try {
+            int del;
+
+            if ((del = JOptionPane.showConfirmDialog(null, "Ingin menghapus data?", "konfirmasi", JOptionPane.YES_NO_OPTION)) == 0) {
+              st = cn.createStatement();
+              st.executeUpdate("DELETE FROM voucher WHERE id_voucher='"
+                  + tabModel.getValueAt(tabelPromo.getSelectedRow(), 0) + "'");
+              ShowTable("");
+              reset();
+            }
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+    }//GEN-LAST:event_btnDelActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    public void tabel(){
+        Object[] tabel = {
+            "ID", "Kode", "Potongan", "Aktif", "Pemakaian"
+        };
+        tabModel = new DefaultTableModel(null, tabel);
+        tabelPromo.setModel(tabModel);
+    }
+    
+    private void ShowTable(String where) {
+        try{
+            st = cn.createStatement();
+            tabModel.getDataVector().removeAllElements();
+            tabModel.fireTableDataChanged();
+            String sql = "SELECT * FROM voucher ";
+            pstmt = cn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+//            DefaultTableModel dtm = (DefaultTableModel)tabelPromo.getModel();
+//            dtm.setRowCount(0);
+            
+//            String[] data = new String[5];
+//            int i = 1;
+            
+            while(rs.next()){
+                Object[] data = {
+                rs.getString("id_voucher"),
+                rs.getString("kode"),
+                rs.getString("potongan"),
+                rs.getString("aktif"),
+                rs.getString("pemakaian"),
+//                dtm.addRow(data);
+//                i++;
+            };
+                tabModel.addRow(data);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -80,5 +347,20 @@ public class Promo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JComboBox<String> inputAktif;
+    private javax.swing.JTextField inputKode;
+    private javax.swing.JTextField inputPem;
+    private javax.swing.JTextField inputPot;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabelPromo;
     // End of variables declaration//GEN-END:variables
 }

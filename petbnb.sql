@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 03:12 PM
+-- Generation Time: Jun 13, 2021 at 12:03 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -41,7 +41,7 @@ CREATE TABLE `host` (
 INSERT INTO `host` (`id_host`, `id_user`, `alamat`, `verified`) VALUES
 (2, 3, 'Jl. Tenggara Medan Kota', 'Y'),
 (3, 6, 'Jalan Cinta Medan Baru', 'Y'),
-(6, 8, 'jauh banget deh', 'N'),
+(6, 8, 'lOHHH HEEEE', 'Y'),
 (7, 9, 'Jauh banget jalan Conjuring', 'Y'),
 (8, 10, 'Jl. Medan Sunggal', 'Y');
 
@@ -69,7 +69,8 @@ INSERT INTO `host_house` (`id_house`, `id_host`, `no_hp`, `email`, `foto`, `harg
 (1, 2, '081234567890', 'putripethouse@example.com', 'host1.jpg', 100000, 'Y'),
 (2, 3, '08080823456', 'email@email.com', 'host2.jpg', 120000, 'Y'),
 (3, 8, '0878896545', 'mhmd@email.com', 'host3.jpg', 95000, 'Y'),
-(4, 7, '12347859522', 'hosthewan@email.com', 'host4.jpg', 80000, 'N');
+(4, 7, '12347859522', 'hosthewan@email.com', 'host4.jpg', 80000, 'N'),
+(11, 6, '0822758147565', 'yes@mail.com', '72406.jpg', 50000, 'Y');
 
 -- --------------------------------------------------------
 
@@ -110,8 +111,9 @@ INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_host`, `nama_hewan`, `jenis`
 (7, 4, 8, 'Mendo', 'Anjing', 3, 'Ayam Cincang', '', 'Pertalite', '13-06-2021', '14-06-2021', 'YNTKTS', 108000, 108000, 'Belum', ''),
 (8, 4, 8, 'Melinda', 'Kucing', 2, 'Kacang Merah', '-', 'Normal', '14-06-2021', '15-06-2021', 'N', 95000, 95000, 'Belum', ''),
 (9, 4, 8, 'Merinda', 'Hamster', 1, 'Kacang', 'hehe', 'Pertalite', '17-06-2021', '18-06-2021', 'YNTKTS', 135000, 108000, 'Belum', ''),
-(10, 4, 8, 'Felix', 'Kucing', 2, 'asd', 'asdas', 'Pertalite', '24-06-2021', '25-06-2021', 'N', 135000, 135000, 'Belum', ''),
-(11, 1, 2, 'Mento', 'Kucing', 2, 'Ayam', '-', 'Premium', '17-06-2021', '18-06-2021', 'N', 115000, 115000, 'Selesai', '12-06-2021 14:44');
+(10, 4, 8, 'Felix', 'Kucing', 2, 'asd', 'asdas', 'Pertalite', '24-06-2021', '25-06-2021', 'N', 135000, 135000, 'Selesai', ''),
+(11, 1, 2, 'Mento', 'Kucing', 2, 'Ayam', '-', 'Premium', '17-06-2021', '18-06-2021', 'N', 115000, 115000, 'Selesai', '12-06-2021 14:44'),
+(12, 1, 3, 'Messi', 'Ikan', 1, 'Kacang', '-', 'Deluxe', '15-06-2021', '16-06-2021', 'N', 150000, 150000, 'Selesai', '12-06-2021 21:49');
 
 -- --------------------------------------------------------
 
@@ -135,7 +137,9 @@ INSERT INTO `review_rating_host` (`id_review_rating`, `id_pesanan`, `review`, `r
 (2, 2, 'HEHE SUKA BANGEETT', 4),
 (3, 3, 'YAA SO SO LAH!!', 3),
 (4, 4, 'MANTAPP BROSKIII', 5),
-(5, 11, 'Kerenn!!', 5);
+(5, 11, 'Kerenn!!', 5),
+(6, 6, 'kirimm', 5),
+(7, 12, 'Baguss!!!', 5);
 
 -- --------------------------------------------------------
 
@@ -162,7 +166,7 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `user_level`) VALUES
 (4, 'haya', 'haya', 'haya', 1),
 (5, 'ara', 'ara', 'ara', 1),
 (6, 'Haya Pet House', 'sity', 'sity', 2),
-(8, 'felis catus lovers', 'asdasd', '123', 2),
+(8, 'Gugukers', 'felis', '123', 2),
 (10, 'Mahmud Pet House', 'mhmd', '123', 2),
 (11, 'Arsya Fikri', 'arsyf', '123456', 1),
 (12, '123', '123', '123', 1),
@@ -244,19 +248,19 @@ ALTER TABLE `host`
 -- AUTO_INCREMENT for table `host_house`
 --
 ALTER TABLE `host_house`
-  MODIFY `id_house` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_house` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `review_rating_host`
 --
 ALTER TABLE `review_rating_host`
-  MODIFY `id_review_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_review_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`

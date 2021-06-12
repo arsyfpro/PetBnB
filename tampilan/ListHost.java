@@ -22,7 +22,6 @@ public class ListHost extends javax.swing.JFrame {
      */
     private ArrayList<Host> listHost = new ArrayList<>();
     private ListIterator<Host> listIterator;
-    private int size;
     private String id_host, namaHst;
     private double harga;
     private int id_user;
@@ -35,7 +34,6 @@ public class ListHost extends javax.swing.JFrame {
         Host hst = new Host();
         hst.ambilData(listHost);
         
-        size = listHost.size();
         listIterator = listHost.listIterator();
         hst = listIterator.next();
         id_host = hst.getId_host();
