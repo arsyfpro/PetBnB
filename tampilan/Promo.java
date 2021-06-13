@@ -78,14 +78,24 @@ public class Promo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelPromo);
 
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(248, 228, 183));
         jLabel3.setText("Kode");
 
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(248, 228, 183));
         jLabel4.setText("Potongan");
 
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(248, 228, 183));
         jLabel5.setText("Pemakaian");
 
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(248, 228, 183));
         jLabel6.setText("Aktif ( Y / N )");
 
+        btnAdd.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(112, 129, 96));
         btnAdd.setText("TAMBAH");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +103,11 @@ public class Promo extends javax.swing.JFrame {
             }
         });
 
+        inputAktif.setForeground(new java.awt.Color(207, 0, 0));
         inputAktif.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Y", "N" }));
 
+        btnUpdate.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(112, 129, 96));
         btnUpdate.setText("UPDATE");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +115,8 @@ public class Promo extends javax.swing.JFrame {
             }
         });
 
+        btnDel.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        btnDel.setForeground(new java.awt.Color(207, 0, 0));
         btnDel.setText("HAPUS");
         btnDel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +124,8 @@ public class Promo extends javax.swing.JFrame {
             }
         });
 
+        btnReset.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        btnReset.setForeground(new java.awt.Color(112, 129, 96));
         btnReset.setText("RESET");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +133,8 @@ public class Promo extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(248, 228, 183));
         jLabel1.setText("Kelola Promosi");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,13 +160,13 @@ public class Promo extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnUpdate))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                                 .addComponent(btnReset))
                             .addComponent(inputPem, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
                             .addComponent(inputPot, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
                             .addComponent(inputKode, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
                             .addComponent(inputAktif, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45))))
         );
@@ -173,7 +191,7 @@ public class Promo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(inputPem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnUpdate)

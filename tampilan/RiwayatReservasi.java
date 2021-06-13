@@ -107,6 +107,7 @@ public class RiwayatReservasi extends javax.swing.JFrame {
     
     public RiwayatReservasi() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(236,219,186));
     }
 
     /**
@@ -141,7 +142,8 @@ public class RiwayatReservasi extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(995, 575));
         setMinimumSize(new java.awt.Dimension(995, 575));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 89, 69));
         jLabel1.setText("Riwayat Reservasi Kamu");
 
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -169,31 +171,39 @@ public class RiwayatReservasi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableData);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 22)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(240, 89, 69));
         jLabel2.setText("Kode Pesanan: ");
 
         lKode.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        lKode.setForeground(new java.awt.Color(162, 10, 10));
         lKode.setText("Kode");
 
-        lNama.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        lNama.setFont(new java.awt.Font("Yu Gothic UI", 0, 22)); // NOI18N
+        lNama.setForeground(new java.awt.Color(240, 89, 69));
         lNama.setText("Hewan");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 22)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(240, 89, 69));
         jLabel3.setText("Makanan Favorit: ");
 
         lMakanan.setFont(new java.awt.Font("Segoe UI", 0, 19)); // NOI18N
         lMakanan.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 22)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(240, 89, 69));
         jLabel4.setText("Status Pesanan:");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 22)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(240, 89, 69));
         jLabel5.setText("Catatan:");
 
-        lStatus.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        lStatus.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
+        lStatus.setForeground(new java.awt.Color(97, 177, 90));
         lStatus.setText("Selesai");
 
-        lReview.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        lReview.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        lReview.setForeground(new java.awt.Color(240, 89, 69));
         lReview.setText("Review");
 
         inputReview.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -203,7 +213,8 @@ public class RiwayatReservasi extends javax.swing.JFrame {
             }
         });
 
-        btnKirim.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnKirim.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        btnKirim.setForeground(new java.awt.Color(236, 82, 75));
         btnKirim.setText("Kirim");
         btnKirim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,7 +222,8 @@ public class RiwayatReservasi extends javax.swing.JFrame {
             }
         });
 
-        lRating.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        lRating.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        lRating.setForeground(new java.awt.Color(240, 89, 69));
         lRating.setText("Rating");
 
         inputRating.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N

@@ -196,7 +196,10 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="20" style="0"/>
+          <Font name="Yu Gothic UI" size="20" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="b7" green="e4" red="f8" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Pesanan Nomor: "/>
       </Properties>
@@ -213,13 +216,19 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="20" style="0"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="b7" green="e4" red="f8" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Status Pesanan: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="pilUbah">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="20" style="0"/>
+          <Font name="Yu Gothic UI" size="20" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="3a" green="3a" red="aa" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
@@ -235,7 +244,10 @@
     <Component class="javax.swing.JButton" name="btnUbah">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="20" style="0"/>
+          <Font name="Yu Gothic UI" size="20" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="3a" green="3a" red="aa" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ubah"/>
       </Properties>
@@ -246,7 +258,10 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="24" style="0"/>
+          <Font name="Yu Gothic UI" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="b7" green="e4" red="f8" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Riwayat Reservasi di Penginapan Kamu"/>
       </Properties>

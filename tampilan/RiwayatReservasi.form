@@ -144,7 +144,10 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="36" style="0"/>
+          <Font name="Yu Gothic UI" size="36" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Riwayat Reservasi Kamu"/>
       </Properties>
@@ -230,7 +233,10 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="22" style="0"/>
+          <Font name="Yu Gothic UI" size="22" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Kode Pesanan: "/>
       </Properties>
@@ -240,13 +246,19 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="22" style="0"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="a" green="a" red="a2" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Kode"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lNama">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="22" style="0"/>
+          <Font name="Yu Gothic UI" size="22" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Hewan"/>
       </Properties>
@@ -254,7 +266,10 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="22" style="0"/>
+          <Font name="Yu Gothic UI" size="22" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Makanan Favorit: "/>
       </Properties>
@@ -270,7 +285,10 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="22" style="0"/>
+          <Font name="Yu Gothic UI" size="22" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Status Pesanan:"/>
       </Properties>
@@ -278,7 +296,10 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="22" style="0"/>
+          <Font name="Yu Gothic UI" size="22" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Catatan:"/>
       </Properties>
@@ -286,7 +307,10 @@
     <Component class="javax.swing.JLabel" name="lStatus">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="22" style="0"/>
+          <Font name="Yu Gothic UI" size="22" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="b1" red="61" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Selesai"/>
       </Properties>
@@ -294,7 +318,10 @@
     <Component class="javax.swing.JLabel" name="lReview">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="20" style="0"/>
+          <Font name="Yu Gothic UI" size="20" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Review"/>
       </Properties>
@@ -312,7 +339,10 @@
     <Component class="javax.swing.JButton" name="btnKirim">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="20" style="0"/>
+          <Font name="Yu Gothic UI" size="20" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="4b" green="52" red="ec" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Kirim"/>
       </Properties>
@@ -323,7 +353,10 @@
     <Component class="javax.swing.JLabel" name="lRating">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="20" style="0"/>
+          <Font name="Yu Gothic UI" size="20" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="59" red="f0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Rating"/>
       </Properties>

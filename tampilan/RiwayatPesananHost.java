@@ -38,6 +38,7 @@ public class RiwayatPesananHost extends javax.swing.JFrame {
     
     public RiwayatPesananHost(){
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(187,55,26));
     }
         
     /**
@@ -81,18 +82,22 @@ public class RiwayatPesananHost extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jScrollPane1);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(248, 228, 183));
         jLabel1.setText("Pesanan Nomor: ");
 
         labelNomor.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(248, 228, 183));
         jLabel2.setText("Status Pesanan: ");
 
-        pilUbah.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        pilUbah.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        pilUbah.setForeground(new java.awt.Color(170, 58, 58));
         pilUbah.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Belum", "Selesai" }));
 
-        btnUbah.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnUbah.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        btnUbah.setForeground(new java.awt.Color(170, 58, 58));
         btnUbah.setText("Ubah");
         btnUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +105,8 @@ public class RiwayatPesananHost extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(248, 228, 183));
         jLabel3.setText("Riwayat Reservasi di Penginapan Kamu");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

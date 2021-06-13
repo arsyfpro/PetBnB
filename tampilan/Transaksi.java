@@ -22,6 +22,7 @@ public class Transaksi extends javax.swing.JFrame {
      */
     public Transaksi() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(164,183,135));
         ShowTable();
     }
 
@@ -41,6 +42,8 @@ public class Transaksi extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBackground(new java.awt.Color(240, 240, 240));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -56,7 +59,8 @@ public class Transaksi extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jScrollPane1);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(248, 228, 183));
         jLabel1.setText("Riwayat Seluruh Reservasi");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

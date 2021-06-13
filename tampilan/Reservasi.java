@@ -47,6 +47,7 @@ public class Reservasi extends javax.swing.JFrame {
 
     private Reservasi() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(236,219,186));
         tgglCheckIn.setMinSelectableDate(new Date());
         btnPesan.setVisible(false);
     }
@@ -95,28 +96,36 @@ public class Reservasi extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(995, 575));
         setPreferredSize(new java.awt.Dimension(995, 650));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(236, 82, 75));
         jLabel1.setText("Reservasi Penginapan di");
 
-        nHost.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        nHost.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        nHost.setForeground(new java.awt.Color(236, 82, 75));
         nHost.setText("namaHost");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(236, 82, 75));
         jLabel2.setText("Nama Hewan");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(236, 82, 75));
         jLabel3.setText("Jenis hewan");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(236, 82, 75));
         jLabel4.setText("Makanan Favorit");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(236, 82, 75));
         jLabel5.setText("Umur (tahun)");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(236, 82, 75));
         jLabel6.setText("Tanggal Check-out");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(236, 82, 75));
         jLabel7.setText("Tanggal Check-in");
 
         inputJenis.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -145,6 +154,7 @@ public class Reservasi extends javax.swing.JFrame {
         pilJenis.setPreferredSize(new java.awt.Dimension(96, 42));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(207, 0, 0));
         jLabel8.setText("*isi jika kamu memilih \"lainnya...\"");
 
         tgglCheckOut.setDateFormatString("dd-MM-yyyy");
@@ -161,6 +171,7 @@ public class Reservasi extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(236, 82, 75));
         jLabel9.setText("Jenis layanan");
 
         pilLayanan.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -170,6 +181,7 @@ public class Reservasi extends javax.swing.JFrame {
         TotalBiaya.setText("0");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(52, 79, 161));
         jLabel11.setText("Total");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -178,7 +190,8 @@ public class Reservasi extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel12.setText(",-");
 
-        btnCekHarga.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnCekHarga.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        btnCekHarga.setForeground(new java.awt.Color(112, 129, 96));
         btnCekHarga.setText("Cek Harga");
         btnCekHarga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,7 +199,8 @@ public class Reservasi extends javax.swing.JFrame {
             }
         });
 
-        btnPesan.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnPesan.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        btnPesan.setForeground(new java.awt.Color(112, 129, 96));
         btnPesan.setText("Pesan");
         btnPesan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +209,7 @@ public class Reservasi extends javax.swing.JFrame {
         });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(236, 82, 75));
         jLabel13.setText("Catatan khusus (opsional)");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -206,11 +221,13 @@ public class Reservasi extends javax.swing.JFrame {
         jScrollPane1.setViewportView(inputCatatan);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(236, 82, 75));
         jLabel14.setText("Kode Voucher (jika ada)");
 
         inputVoucher.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(207, 0, 0));
         jLabel15.setText("*berlaku biaya tambahan per hari");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -243,12 +260,6 @@ public class Reservasi extends javax.swing.JFrame {
                                     .addComponent(inputUmur, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(inputNama, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(inputMakanan)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5))
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -272,14 +283,21 @@ public class Reservasi extends javax.swing.JFrame {
                                         .addComponent(jLabel12))
                                     .addComponent(jLabel9)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCekHarga)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnPesan)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jLabel15))
-                        .addContainerGap(45, Short.MAX_VALUE))))
+                        .addContainerGap(45, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCekHarga)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPesan)
+                        .addGap(205, 205, 205))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

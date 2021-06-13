@@ -30,6 +30,7 @@ public class ReviewCust extends javax.swing.JFrame {
     
     public ReviewCust() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(187,55,26));
     }
 
     /**
@@ -47,7 +48,9 @@ public class ReviewCust extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(248, 228, 183));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Review Customer untuk Penginapan Kamu");
 
         tabelReview.setModel(new javax.swing.table.DefaultTableModel(

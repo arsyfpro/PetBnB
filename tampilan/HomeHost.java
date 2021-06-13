@@ -55,7 +55,7 @@ public class HomeHost extends javax.swing.JFrame {
     
     public HomeHost() {
         initComponents();
-      
+      getContentPane().setBackground(new java.awt.Color(187,55,26));
     }
     
     public HomeHost(int idu) {
@@ -193,27 +193,35 @@ public class HomeHost extends javax.swing.JFrame {
         );
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(248, 228, 183));
         jLabel3.setText("Detail Penginapan ");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(248, 228, 183));
         jLabel1.setText("Nama Penginapan");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(248, 228, 183));
         jLabel4.setText("Harga Inap per malam (Rp)");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(248, 228, 183));
         jLabel5.setText("Nama Penginapan");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(248, 228, 183));
         jLabel6.setText("No HP");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(248, 228, 183));
         jLabel7.setText("Email");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(248, 228, 183));
         jLabel8.setText("Terima Order");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(248, 228, 183));
         jLabel9.setText("Foto");
 
         HPHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -240,6 +248,7 @@ public class HomeHost extends javax.swing.JFrame {
         EmailHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(248, 228, 183));
         jLabel10.setText("Alamat");
 
         AlamatHost.setColumns(20);
@@ -248,9 +257,11 @@ public class HomeHost extends javax.swing.JFrame {
         jScrollPane1.setViewportView(AlamatHost);
 
         terimaPesanan.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        terimaPesanan.setForeground(new java.awt.Color(170, 58, 58));
         terimaPesanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ya", "Tidak" }));
 
         btnGanti.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnGanti.setForeground(new java.awt.Color(170, 58, 58));
         btnGanti.setText("Ganti Foto");
         btnGanti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,9 +272,11 @@ public class HomeHost extends javax.swing.JFrame {
         StatusHost.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(248, 228, 183));
         jLabel11.setText("*status saat ini");
 
-        btnSimpan.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btnSimpan.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        btnSimpan.setForeground(new java.awt.Color(170, 58, 58));
         btnSimpan.setText("Simpan");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
