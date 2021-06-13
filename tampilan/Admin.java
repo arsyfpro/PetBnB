@@ -104,7 +104,7 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 220, 575);
 
-        jPanel2.setBackground(new java.awt.Color(244, 244, 244));
+        jPanel2.setBackground(new java.awt.Color(243, 240, 215));
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(170, 58, 58));

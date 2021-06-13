@@ -24,6 +24,7 @@ public class Promo extends javax.swing.JFrame {
      */
     public Promo() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(164,183,135));
         tabel();
         ShowTable("");
         
@@ -57,6 +58,7 @@ public class Promo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(164, 183, 135));
 
         tabelPromo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

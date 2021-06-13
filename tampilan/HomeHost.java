@@ -55,6 +55,7 @@ public class HomeHost extends javax.swing.JFrame {
     
     public HomeHost() {
         initComponents();
+      
     }
     
     public HomeHost(int idu) {
@@ -135,14 +136,20 @@ public class HomeHost extends javax.swing.JFrame {
         btnSimpan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setPreferredSize(new java.awt.Dimension(1091, 580));
+        setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(235, 168, 58));
+        jPanel1.setForeground(new java.awt.Color(213, 219, 179));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(170, 58, 58));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Menu Host");
 
-        btnReview.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnReview.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        btnReview.setForeground(new java.awt.Color(170, 58, 58));
         btnReview.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnReview.setText("Review Kamu");
         btnReview.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,7 +158,8 @@ public class HomeHost extends javax.swing.JFrame {
             }
         });
 
-        btnReservasi.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnReservasi.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
+        btnReservasi.setForeground(new java.awt.Color(170, 58, 58));
         btnReservasi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnReservasi.setText("Reservasi Kamu");
         btnReservasi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -184,7 +192,7 @@ public class HomeHost extends javax.swing.JFrame {
                     .addContainerGap(357, Short.MAX_VALUE)))
         );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel3.setText("Detail Penginapan ");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -272,10 +280,6 @@ public class HomeHost extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -302,11 +306,11 @@ public class HomeHost extends javax.swing.JFrame {
                                                 .addComponent(btnSimpan))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
                                             .addComponent(jLabel6)
                                             .addComponent(jLabel7)
                                             .addComponent(jLabel4)
-                                            .addComponent(jLabel10))
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel5))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(NamaHost)
@@ -314,8 +318,13 @@ public class HomeHost extends javax.swing.JFrame {
                                             .addComponent(EmailHost)
                                             .addComponent(HargaHost)
                                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(35, 35, 35)))))
-                .addGap(78, 78, 78))
+                                .addGap(35, 35, 35)))
+                        .addGap(78, 78, 78))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(162, 162, 162)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,7 +338,7 @@ public class HomeHost extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addGap(16, 16, 16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
                         .addGap(16, 16, 16)
                         .addComponent(jLabel7)
@@ -363,7 +372,7 @@ public class HomeHost extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FotoHost, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
-                        .addContainerGap(22, Short.MAX_VALUE))
+                        .addContainerGap(32, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnGanti)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
