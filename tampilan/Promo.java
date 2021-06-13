@@ -84,7 +84,7 @@ public class Promo extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(248, 228, 183));
-        jLabel4.setText("Potongan");
+        jLabel4.setText("Potongan (%)");
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(248, 228, 183));
@@ -93,6 +93,18 @@ public class Promo extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(248, 228, 183));
         jLabel6.setText("Aktif ( Y / N )");
+
+        inputPot.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inputPotKeyTyped(evt);
+            }
+        });
+
+        inputPem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inputPemKeyTyped(evt);
+            }
+        });
 
         btnAdd.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(112, 129, 96));
@@ -218,9 +230,15 @@ public class Promo extends javax.swing.JFrame {
         if (kode.isEmpty() || potongan.isEmpty() || pemakaian.isEmpty() ){
             JOptionPane.showMessageDialog(null, "Data tidak boleh kosong!");
         } else {
+            float jml = Float.parseFloat(inputPot.getText());
+            
+            if (jml > 100) {
+                JOptionPane.showMessageDialog(null, "Potongan tidak boleh lebih dari 100%!");
+            } else {
+                float ptngn = jml / 100;
                 try {
                     String sql = "INSERT INTO voucher (id_voucher, kode, potongan,aktif, pemakaian)"
-                            + "VALUES(null, '"+kode+"','"+potongan+"', '"+inputAktif.getSelectedItem()+"','"+pemakaian+"')";
+                            + "VALUES(null, '"+kode+"','"+ptngn+"', '"+inputAktif.getSelectedItem()+"','"+pemakaian+"')";
 
                     st = cn.createStatement();
                     st.execute(sql);
@@ -231,6 +249,7 @@ public class Promo extends javax.swing.JFrame {
                 } catch (Exception e){
                     e.printStackTrace();
                 }
+            }
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -290,6 +309,20 @@ public class Promo extends javax.swing.JFrame {
             e.printStackTrace();
           }
     }//GEN-LAST:event_btnDelActionPerformed
+
+    private void inputPemKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputPemKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c))
+            evt.consume();
+    }//GEN-LAST:event_inputPemKeyTyped
+
+    private void inputPotKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputPotKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c))
+            evt.consume();
+    }//GEN-LAST:event_inputPotKeyTyped
 
     /**
      * @param args the command line arguments

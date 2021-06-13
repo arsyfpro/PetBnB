@@ -112,12 +112,12 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(450, 370, 130, 31);
+        btnSignIn.setBounds(450, 370, 130, 30);
 
         jLabel3.setForeground(new java.awt.Color(255, 248, 217));
         jLabel3.setText("hasn't had an account?");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(400, 420, 161, 30);
+        jLabel3.setBounds(400, 420, 181, 30);
 
         toSignUp.setForeground(new java.awt.Color(251, 147, 0));
         toSignUp.setText("Sign Up!");
