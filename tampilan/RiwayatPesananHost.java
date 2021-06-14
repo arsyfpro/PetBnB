@@ -30,6 +30,7 @@ public class RiwayatPesananHost extends javax.swing.JFrame {
      */
     public RiwayatPesananHost(String id_host) {
         initComponents();
+         getContentPane().setBackground(new java.awt.Color(187,55,26));
         this.id_host = id_host;
         ShowTable();
         btnUbah.setVisible(false);

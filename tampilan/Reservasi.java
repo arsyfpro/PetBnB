@@ -36,6 +36,8 @@ public class Reservasi extends javax.swing.JFrame {
      */
     public Reservasi(String id_host, String n, double h, int id_user) {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(236,219,186));
+        
         this.id_user = id_user;
         this.id_host = id_host;
         harga = h;

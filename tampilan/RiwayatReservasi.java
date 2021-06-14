@@ -100,6 +100,7 @@ public class RiwayatReservasi extends javax.swing.JFrame {
     
     public RiwayatReservasi(int id_user) {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(236,219,186));
         this.id_user = id_user;
         headerTabel();
         tampilData();

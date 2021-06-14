@@ -25,6 +25,7 @@ public class ReviewCust extends javax.swing.JFrame {
     public ReviewCust(String id) {
         this.id = id;
         initComponents();
+         getContentPane().setBackground(new java.awt.Color(187,55,26));
         showTable();
     }
     

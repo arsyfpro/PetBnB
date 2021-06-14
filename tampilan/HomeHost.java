@@ -60,6 +60,7 @@ public class HomeHost extends javax.swing.JFrame {
     
     public HomeHost(int idu) {
         initComponents();
+         getContentPane().setBackground(new java.awt.Color(187,55,26));
         ResultSet rs;
         this.idu = idu;
         
